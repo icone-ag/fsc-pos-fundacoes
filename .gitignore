@@ -1,0 +1,11 @@
+# Dev/local
+.claude/
+
+# Arquivos com dados pessoais — NÃO publicar
+assets/Certificado.jpg
+
+# Originais pesados (não usados pelas páginas)
+assets/vinicius.jpg
+assets/vinicius-bg.jpg
+assets/Fotos Professores/
+assets/Prints materiais/

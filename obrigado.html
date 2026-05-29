@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obrigado pelo seu interesse — Instituto FSC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+  :root{
+    --primary:#2424c9;
+    --primary-bright:#3a3aff;
+    --primary-deep:#13138f;
+    --ink:#161630;
+    --muted:#9a9ab2;
+    --muted-2:#8a8aa3;
+    --bg:#eeedf9;
+    --bg-soft:#f3f2fb;
+    --card:#ffffff;
+    --line:#e3e2f0;
+    --badge-bg:#e7e6fb;
+    --radius:14px;
+    --shadow:0 18px 40px -22px rgba(36,36,201,.28);
+    --shadow-soft:0 16px 36px -24px rgba(20,20,60,.30);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 50% -200px,#e7e6fa 0%,transparent 60%),
+      linear-gradient(180deg,#f1f0fb 0%,#f6f5fc 100%);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  img{max-width:100%;display:block}
+
+  /* ---------- NAV ---------- */
+  header{position:sticky;top:0;z-index:50;padding:18px 0}
+  .nav{
+    background:#fff;border-radius:60px;
+    box-shadow:0 14px 34px -20px rgba(20,20,60,.35);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 14px 12px 26px;
+  }
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .fsc{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;color:var(--primary-deep);letter-spacing:-1px;line-height:1}
+  .brand small{display:block;font-size:8px;letter-spacing:.3px;color:#3a3a5c;font-weight:500;margin-top:2px}
+  .nav-links{display:flex;gap:34px;font-size:14px;font-weight:500;color:#2b2b45}
+  .nav-links a{color:inherit;text-decoration:none}
+  .nav-links a:hover{color:var(--primary)}
+  .btn{
+    background:var(--primary);color:#fff;border:none;cursor:pointer;
+    font-family:inherit;font-weight:600;border-radius:40px;
+    padding:13px 26px;font-size:13.5px;letter-spacing:.2px;
+    box-shadow:0 12px 26px -12px rgba(36,36,201,.7);
+    transition:transform .15s ease,background .2s ease;
+  }
+  .btn:hover{background:#1d1db4;transform:translateY(-1px)}
+
+  /* ---------- HERO ---------- */
+  .hero{background:#e9e8f6;padding:54px 0 70px;}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) 0.95fr;gap:50px;align-items:start}
+  .eyebrow{display:flex;align-items:center;gap:22px;margin-bottom:34px}
+  .eyebrow .txt b{font-size:27px;font-weight:800;color:var(--ink);letter-spacing:-.5px}
+  .eyebrow .txt b i{color:var(--primary);font-style:normal}
+  .eyebrow .txt span{display:block;font-size:13px;letter-spacing:1.6px;color:#6b6b86;font-weight:600;margin-top:4px}
+  .mec{width:100px;height:100px;flex:none;border-radius:50%;overflow:hidden;display:block;filter:drop-shadow(0 8px 18px rgba(20,20,80,.28))}
+  .mec img{width:100%;height:100%;object-fit:cover;transform:scale(1.06)}
+  .hero h1{font-size:clamp(24px,2.6vw,33px);line-height:1.2;font-weight:800;letter-spacing:-.6px;margin-bottom:22px;color:#1b1b38}
+  .hero h1 span{display:block}
+  .hero h1 .l2{font-size:1.08em}
+  .hero p.lead{color:#6f6f8c;font-size:17px;line-height:1.6;max-width:420px;margin-bottom:30px}
+  .form-card{
+    background:var(--card);border-radius:22px;padding:36px 34px;
+    box-shadow:0 26px 60px -30px rgba(30,30,90,.4);max-width:560px;
+    position:relative;z-index:5;
+  }
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:13px;font-weight:700;letter-spacing:1px;color:#2c2c4a;margin-bottom:9px}
+  .field input,.field select{
+    width:100%;border:1.5px solid #e2e1f0;border-radius:11px;
+    padding:16px 16px;font-family:inherit;font-size:15px;color:var(--ink);
+    background:#fff;outline:none;transition:border .15s;
+  }
+  .field select{color:var(--ink);-webkit-appearance:none;appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237e7e9a' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat:no-repeat;background-position:right 18px center;}
+  .field input:focus,.field select:focus{border-color:var(--primary)}
+  .field input::placeholder{color:#b6b6c6}
+  .field select:invalid{color:#9a9ab2}
+  .field select option{color:var(--ink)}
+  .form-card .btn{
+    width:100%;text-transform:uppercase;font-size:14px;font-weight:700;letter-spacing:1px;
+    padding:18px;margin-top:8px;border-radius:40px;
+    background:linear-gradient(180deg,#3a3ad8 0%,#1f1faf 100%);
+    box-shadow:0 16px 30px -14px rgba(31,31,175,.75);
+  }
+  .form-card .btn:hover{background:linear-gradient(180deg,#3232c8 0%,#19199c 100%)}
+
+  /* ---------- COLLAGE ---------- */
+  .collage{position:relative;width:130%;margin-left:-22%;margin-top:-4px;z-index:4;pointer-events:none;aspect-ratio:1.06/1}
+  .collage figure{
+    position:absolute;margin:0;border-radius:18px;overflow:hidden;
+    box-shadow:0 22px 44px -22px rgba(25,25,70,.45);
+    background:linear-gradient(135deg,#8a7350,#4a3f2c);
+  }
+  .collage figure img{width:100%;height:100%;object-fit:cover}
+  .c-a{left:9%;top:1%;width:36%;height:29%}
+  .c-b{left:46%;top:3%;width:29%;height:21%}
+  .c-c{left:75%;top:9%;width:24%;height:47%}
+  .c-d{left:19%;top:23%;width:58%;height:48%;z-index:5;box-shadow:0 30px 60px -24px rgba(25,25,70,.6)}
+  .c-e{left:0%;top:32%;width:19%;height:42%;z-index:2}
+  .c-f{left:5%;top:72%;width:40%;height:27%}
+  .c-g{left:46%;top:67%;width:53%;height:32%;z-index:2}
+
+  /* ---------- DIVIDER ---------- */
+  .divider{padding:42px 0;text-align:center}
+  .divider .line{height:1px;background:var(--line);max-width:880px;margin:0 auto 26px}
+  .divider span{color:var(--primary);font-weight:600;font-size:14.5px}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:24px 0}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  h2{font-size:25px;font-weight:700;line-height:1.25;letter-spacing:-.3px;margin-bottom:20px}
+  .body-txt{color:var(--muted);font-size:14px;margin-bottom:16px;max-width:430px}
+  .pill{
+    display:inline-block;background:var(--badge-bg);color:var(--primary);
+    font-size:10px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;
+    padding:7px 14px;border-radius:30px;margin-bottom:18px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{padding:50px 0 30px}
+  .stat-card{
+    background:#fff;border-radius:14px;padding:26px 30px;margin-top:26px;
+    box-shadow:var(--shadow-soft);display:inline-block;
+  }
+  .stat-card .num{font-size:42px;font-weight:800;color:var(--primary);letter-spacing:-1px;line-height:1}
+  .stat-card .lbl{font-size:13px;font-weight:600;color:var(--ink);margin-top:6px;max-width:170px}
+  .photo-grid{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-soft);background:#ddd}
+  .photo-grid img{width:100%;display:block}
+
+  /* ---------- PRACTICE ---------- */
+  .video{
+    border-radius:14px;overflow:hidden;box-shadow:var(--shadow-soft);
+    position:relative;aspect-ratio:16/9;background:#000;
+  }
+  .video video{width:100%;height:100%;object-fit:cover;display:block}
+  .video img{width:100%;height:100%;object-fit:cover}
+  .video .play{
+    position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;
+    background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px -8px rgba(0,0,0,.5);cursor:pointer;border:0;padding:0;transition:opacity .25s,transform .15s;
+  }
+  .video .play:hover{transform:scale(1.06)}
+  .video.is-playing .play{opacity:0;pointer-events:none}
+  .video .play:after{content:"";border-left:18px solid var(--primary);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}
+  .video .bar{
+    position:absolute;left:0;right:0;bottom:0;height:34px;background:rgba(20,20,20,.78);
+    display:flex;align-items:center;gap:12px;padding:0 14px;color:#fff;font-size:11px;
+  }
+  .video .bar .prog{flex:1;height:3px;background:rgba(255,255,255,.35);border-radius:3px;position:relative}
+  .video .bar .prog:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6%;background:#ff3b30;border-radius:3px}
+
+  /* ---------- BLUE SECTION ---------- */
+  .blueband{
+    background:
+      radial-gradient(900px 500px at 18% 30%,#3f3fff 0%,transparent 55%),
+      linear-gradient(120deg,#2a1ec9 0%,#1c14a0 45%,#150f78 100%);
+    color:#fff;margin-top:40px;padding:70px 0;
+  }
+  .blueband .two{align-items:center}
+  .blueband h2{color:#fff}
+  .blueband .body-txt{color:#c8c6ef}
+  .pill-dark{
+    display:inline-block;background:rgba(255,255,255,.14);color:#fff;
+    border:1px solid rgba(255,255,255,.25);
+    font-size:10px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;
+    padding:7px 16px;border-radius:30px;margin-bottom:18px;
+  }
+  /* laptop mockup */
+  .laptop{
+    background:linear-gradient(160deg,#5a5af5,#3a3ad6);border-radius:14px;padding:14px;
+    box-shadow:0 30px 60px -25px rgba(0,0,0,.6);
+  }
+  .laptop-shot{width:100%;display:block;border-radius:8px}
+  .laptop .screen{background:#3b4a52;border-radius:7px;overflow:hidden;aspect-ratio:16/10;position:relative}
+  .ppt-top{height:20px;background:#c0392b;display:flex;align-items:center;gap:4px;padding:0 8px}
+  .ppt-top i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5)}
+  .ppt-body{display:flex;height:calc(100% - 20px)}
+  .ppt-rail{width:18%;background:#2f3b42}
+  .ppt-stage{flex:1;background:#fff;margin:8px;border-radius:3px;padding:8px}
+  .ppt-stage .t{font-size:8px;font-weight:700;color:#222;border-bottom:1px solid #eee;padding-bottom:3px;margin-bottom:6px}
+  .bars{display:flex;align-items:flex-end;gap:6px;height:62%;padding:4px 8px}
+  .bars span{flex:1;background:#2ecc71;border-radius:2px 2px 0 0}
+
+  /* ---------- EVOLUTION ---------- */
+  .evolution{padding:70px 0 30px}
+  .checks{list-style:none;margin-top:8px}
+  .checks li{display:flex;gap:12px;align-items:flex-start;color:#5b5b73;font-size:13.5px;padding:7px 0}
+  .checks li svg{flex:none;margin-top:2px;color:var(--primary)}
+  .chats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .phone{
+    background:#ece5dd;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-soft);
+    border:1px solid #d9d2c9;
+  }
+  .phone .hd{background:#075e54;color:#fff;font-size:10px;font-weight:600;padding:8px 10px;display:flex;align-items:center;gap:7px}
+  .phone .hd .av{width:18px;height:18px;border-radius:50%;background:#cfcfcf}
+  .phone .msgs{padding:10px 9px;display:flex;flex-direction:column;gap:8px;background:#e7ded5}
+  .bub{max-width:88%;font-size:9px;line-height:1.45;padding:7px 9px;border-radius:8px;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+  .bub b{display:block;font-size:8.5px;margin-bottom:2px}
+  .bub.in{background:#fff;align-self:flex-start;border-top-left-radius:2px}
+  .bub.in b{color:#1f7a8c}
+  .bub.out{background:#dcf8c6;align-self:flex-end;border-top-right-radius:2px}
+  .bub.out b{color:#0a8a4a}
+
+  /* ---------- FEATURES ---------- */
+  .features{padding:60px 0 70px}
+  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .feat{
+    background:#fff;border-radius:14px;padding:30px 26px;box-shadow:var(--shadow-soft);
+    transition:transform .15s ease;
+  }
+  .feat:hover{transform:translateY(-3px)}
+  .feat svg{color:var(--primary);margin-bottom:30px}
+  .feat h4{font-size:15px;font-weight:700;line-height:1.3;color:var(--ink)}
+
+  /* ---------- LEGAL / CONTACTS (dark footer) ---------- */
+  .lb-logo{width:240px;max-width:72%;height:auto;display:block;margin:0 auto 34px}
+  .legalblock{background:#0a0f2c;color:#fff;padding:64px 0 44px;text-align:center}
+  .lb-title{font-size:15px;font-weight:700;letter-spacing:3px;margin-bottom:24px}
+  .lb-quote{font-style:italic;font-size:17px;line-height:1.6;max-width:760px;margin:0 auto 26px;color:#eef0ff}
+  .lb-company{font-size:13.5px;letter-spacing:.4px;color:#cdd2ee;margin-bottom:24px;line-height:1.75}
+  .lb-desc{font-size:12.5px;line-height:1.85;max-width:720px;margin:0 auto 36px;color:#9aa0c8}
+  .lb-badges{display:flex;justify-content:center;align-items:center;gap:36px;flex-wrap:wrap;margin-bottom:8px}
+  .emec-banner{width:230px;max-width:80%;height:auto;display:block;border-radius:10px;box-shadow:0 14px 30px -16px rgba(0,0,0,.6)}
+  .focus-seal{width:105px;height:auto;display:block;flex:none}
+  .wpp{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:720px;margin:18px auto 0}
+  .wpp-col{text-align:center}
+  .wpp-head{display:inline-block;background:linear-gradient(180deg,#3a3ad8,#1f1faf);color:#fff;font-weight:600;font-size:14px;padding:10px 24px;border-radius:9px;margin-bottom:20px;box-shadow:0 12px 24px -12px rgba(31,31,175,.8)}
+  .wpp-row{display:grid;grid-template-columns:auto auto;justify-content:center;gap:16px;align-items:center;margin-bottom:16px;font-size:14px}
+  .wpp-row .nm{font-weight:700;text-align:right;color:#fff}
+  .wpp-row .nums{text-align:left;color:#dfe2ff;line-height:1.7}
+  .wpp-list{display:flex;flex-direction:column;gap:8px;font-size:14px;color:#dfe2ff}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid rgba(255,255,255,.07);padding:44px 0;text-align:center;background:#0a0f2c}
+  footer .fsc{font-family:'Playfair Display',serif;font-weight:900;font-size:34px;color:#cdd3ff;letter-spacing:-1px}
+  footer .sub{font-size:9px;font-weight:600;color:#9aa0c8;letter-spacing:.3px;margin-top:2px;margin-bottom:18px}
+  footer .legal{font-size:11px;color:#7e84a8;line-height:1.9}
+
+  /* ---------- CAROUSEL ---------- */
+  .carousel{overflow:hidden;width:100%;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
+  .ctrack{display:flex;width:max-content;animation:carScroll 60s linear infinite}
+  .carousel:hover .ctrack{animation-play-state:paused}
+  .cslide{flex:none;height:420px;margin-right:16px;border-radius:16px;overflow:hidden;
+    box-shadow:var(--shadow-soft);background:#fff}
+  .cslide img{height:100%;width:auto;display:block}
+  @keyframes carScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.ctrack{animation:none}}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .hero-grid,.two{grid-template-columns:1fr;gap:34px}
+    .feat-grid{grid-template-columns:repeat(2,1fr)}
+    .photo-grid{grid-template-columns:repeat(11,1fr)}
+    .hero h1{font-size:30px}
+    .cslide{height:360px}
+    .wpp{grid-template-columns:1fr;gap:30px}
+    .eyebrow .txt b{font-size:23px}
+    .collage{position:relative;display:block;width:100%;margin:0;aspect-ratio:.82;pointer-events:auto}
+    .collage figure{position:absolute!important;margin:0;border-radius:14px;border:3px solid #fff;box-shadow:0 16px 34px -16px rgba(25,25,70,.55)}
+    .collage .c-a{left:0%;top:2%;width:49%;height:23%;z-index:3}
+    .collage .c-b{left:53%;top:0%;width:47%;height:20%;z-index:2}
+    .collage .c-c{left:63%;top:18%;width:37%;height:27%;z-index:6}
+    .collage .c-d{left:7%;top:25%;width:67%;height:40%;z-index:5}
+    .collage .c-e{left:0%;top:41%;width:24%;height:23%;z-index:6}
+    .collage .c-f{left:3%;top:69%;width:51%;height:28%;z-index:4}
+    .collage .c-g{left:49%;top:61%;width:51%;height:34%;z-index:3}
+  }
+  @media(max-width:560px){
+    .feat-grid{grid-template-columns:1fr}
+    .chats{grid-template-columns:1fr}
+  }
+
+  /* ====== OBRIGADO PAGE ====== */
+  a.btn{display:inline-block;text-decoration:none;text-align:center}
+  .sec-head{max-width:760px}
+  .sec-head.center{margin:0 auto;text-align:center}
+
+  /* nav brand logo */
+  .brand img.logo{height:42px;width:auto;display:block}
+
+  /* hero thank-you */
+  .hero-ty{
+    background:
+      radial-gradient(900px 500px at 50% -120px,#4a4aff 0%,transparent 55%),
+      linear-gradient(160deg,#2a1ec9 0%,#1c14a0 50%,#150f78 100%);
+    color:#fff;padding:24px 0 64px;text-align:center;
+  }
+  .hero-ty .eyebrow{justify-content:center;margin-bottom:26px}
+  .hero-ty .eyebrow .txt b{color:#fff}
+  .hero-ty .eyebrow .txt b i{color:#9fa0ff}
+  .hero-ty .eyebrow .txt span{color:#c8c6ef}
+  .hero-ty h1{color:#fff;max-width:720px;margin:14px auto 6px;font-size:clamp(21px,2.4vw,30px);line-height:1.25}
+  .hero-ty .sub{color:#bcbaee;font-size:15px;margin-bottom:30px}
+  .ty-video{max-width:760px;margin:0 auto;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -25px rgba(0,0,0,.6);background:#000}
+  .ty-card{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);
+    border-radius:16px;max-width:760px;margin:20px auto 0;padding:24px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:22px;text-align:left;flex-wrap:wrap;
+  }
+  .ty-card h3{font-size:18px;color:#fff;font-weight:700}
+  .ty-card p{font-size:13px;color:#c8c6ef;margin-top:5px;max-width:430px}
+
+  .ty-cal{background:#fff;border-radius:16px;max-width:760px;margin:22px auto 0;padding:6px;box-shadow:0 26px 60px -30px rgba(0,0,0,.5);overflow:hidden}
+  .ty-cal .calendly-inline-widget{min-width:320px;height:700px}
+  @media(max-width:600px){ .ty-cal .calendly-inline-widget{height:820px} }
+  /* generic image placeholder */
+  .ph{
+    background:linear-gradient(135deg,#ecebf8,#e0def2);
+    border:2px dashed #b9b6dd;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    color:#7d7aa6;font-size:13px;font-weight:600;padding:24px;min-height:220px;
+  }
+  .ph.dark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.3);color:#c8c6ef}
+
+  /* coordinator / bio (uses .blueband) */
+  .bio .portrait{aspect-ratio:1/1;border-radius:16px;overflow:hidden;border:1px solid #4a4aff;box-shadow:0 26px 50px -24px rgba(0,0,0,.6)}
+  .bio .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+  .bio h2{margin-bottom:4px}
+  .bio .role{color:#9fa0ff;font-size:13px;font-weight:600;letter-spacing:.4px;margin-bottom:18px}
+
+  /* mentors */
+  .mentors{padding:50px 0 20px}
+  .mentors-carousel{overflow:hidden;width:100%;padding:8px 0 18px;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%)}
+  .mentors-track{display:flex;width:max-content;animation:mentorScroll 45s linear infinite}
+  .mentors-carousel:hover .mentors-track{animation-play-state:paused}
+  @keyframes mentorScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.mentors-track{animation:none}}
+  .mentor{
+    flex:none;width:158px;margin-right:18px;background:#fff;border-radius:14px;box-shadow:var(--shadow-soft);
+    padding:18px 14px 16px;text-align:center;
+  }
+  .mentor .av{width:90px;height:90px;border-radius:50%;margin:0 auto 12px;overflow:hidden;
+    background:linear-gradient(135deg,#dcdaf2,#c9c6e8);display:flex;align-items:center;justify-content:center;color:#8a87b5;font-size:11px}
+  .mentor .av img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+  .mentor .nm{font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.25}
+  .mentor .mrole{font-size:9.5px;color:var(--muted-2);text-transform:uppercase;letter-spacing:.6px;margin-top:5px;font-weight:600}
+
+  /* methodology */
+  .method{padding:40px 0 30px}
+  .cert-col{display:flex;flex-direction:column;gap:18px}
+  .cert{aspect-ratio:16/10;min-height:0}
+
+  .cert-img{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-soft);border:1px solid #e6e5f2}
+  .cert-img img{width:100%;display:block}
+  /* methodology diagram (orbital) */
+  .mdiagram{position:relative;width:100%;aspect-ratio:1/1;min-height:360px;overflow:visible}
+  .mdiagram .orbit{position:absolute;inset:0;animation:mdspin 38s linear infinite}
+  .mdiagram .cloud{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:32%;height:28%;z-index:5;
+    background:radial-gradient(120% 120% at 50% 30%,#ffffff 0%,#eef0fb 55%,#e3e5f6 100%);
+    border-radius:50% 50% 48% 52%/56% 56% 44% 44%;
+    box-shadow:inset 0 6px 18px rgba(255,255,255,.8),0 18px 40px -22px rgba(36,36,201,.35);
+  }
+  .mdiagram .cloud:before,.mdiagram .cloud:after{content:"";position:absolute;border-radius:50%;background:radial-gradient(120% 120% at 50% 30%,#ffffff 0%,#e8eafb 70%);box-shadow:0 14px 30px -20px rgba(36,36,201,.3)}
+  .mdiagram .cloud:before{width:58%;height:62%;left:-16%;bottom:2%}
+  .mdiagram .cloud:after{width:54%;height:58%;right:-14%;bottom:6%}
+  .mdiagram .cloud span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(15px,1.6vw,20px);color:var(--primary-deep);letter-spacing:-.5px}
+  .mdiagram .spoke{position:absolute;left:50%;top:50%;width:35%;height:2px;transform-origin:0 50%;transform:rotate(var(--a));z-index:1}
+  .mdiagram .spoke::before{content:"";position:absolute;left:18%;right:0;top:0;height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(36,36,201,.05),rgba(36,36,201,.30))}
+  .mdiagram .arm{position:absolute;left:100%;top:50%;width:0;height:0;transform:rotate(calc(-1 * var(--a)))}
+  .mbubble{
+    position:absolute;left:0;top:0;translate:-50% -50%;z-index:3;
+    background:#fff;color:var(--ink);font-size:11px;font-weight:600;line-height:1.2;
+    padding:9px 13px;border-radius:30px;box-shadow:0 12px 26px -14px rgba(20,20,60,.45);
+    display:flex;align-items:center;gap:8px;max-width:135px;text-align:left;
+    animation:mdspin-rev 38s linear infinite;
+  }
+  .mbubble:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--primary);flex:none}
+  .mbubble.accent{background:linear-gradient(180deg,#3a3ad8,#1f1faf);color:#fff}
+  .mbubble.accent:before{background:#fff}
+  .mdiagram:hover .orbit,.mdiagram:hover .mbubble{animation-play-state:paused}
+  @keyframes mdspin{to{rotate:360deg}}
+  @keyframes mdspin-rev{to{rotate:-360deg}}
+  @media(prefers-reduced-motion:reduce){.mdiagram .orbit,.mdiagram .mbubble{animation:none}}
+  @media(max-width:900px){ .mdiagram{min-height:320px} .mbubble{font-size:10px;padding:7px 10px;max-width:104px} .mdiagram .spoke{width:37%} }
+
+  /* materials mosaic */
+  .mat-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:130px;grid-auto-flow:dense;gap:10px}
+  .mat-mosaic figure{margin:0;border-radius:10px;overflow:hidden;background:#fff;border:1px solid #eaeaf2;box-shadow:0 14px 30px -18px rgba(25,25,70,.45)}
+  .mat-mosaic figure img{width:100%;height:100%;object-fit:cover;object-position:50% 0;display:block}
+  .mat-mosaic .m-wide{grid-column:span 2}
+  .mat-mosaic .m-tall{grid-row:span 2}
+  @media(max-width:900px){ .mat-mosaic{grid-auto-rows:26vw} }
+
+  /* footer simplified */
+  .footer-ty{background:#0a0f2c;color:#fff;text-align:center;padding:54px 0 40px}
+  .footer-ty img{width:150px;max-width:60%;margin:0 auto 18px;display:block}
+  .footer-ty .legal{font-size:11.5px;color:#8e93b8;line-height:1.9}
+
+  @media(max-width:900px){
+    .ty-card{flex-direction:column;align-items:flex-start}
+    .bio .two{direction:ltr}
+    .bio .portrait{max-width:340px;margin:0 auto}
+  }
+</style>
+</head>
+<body>
+
+
+<!-- HERO OBRIGADO -->
+<section class="hero-ty" id="top">
+  <div class="wrap">
+    <div class="eyebrow">
+      <div class="txt"><b>Instituto FSC<i>.</i></b><span>FUNDAÇÕES SEM COMPLICAÇÕES</span></div>
+      <span class="mec"><img src="assets/mec.png" alt="Reconhecido pelo MEC — Faculdade Focus"></span>
+    </div>
+
+    <span class="pill-dark">Obrigado pelo seu interesse</span>
+    <h1>Pule a fila: Agende agora uma reunião com o especialista do nosso time pedagógico</h1>
+    <p class="sub">Se ainda houver vagas disponíveis.</p>
+
+    <div class="ty-video">
+      <vturb-smartplayer id="vid-6a14b585e5f223389716dceb" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>
+    </div>
+
+    <div class="ty-cal" id="agendamento">
+      <div class="calendly-inline-widget" data-url="https://link.fundacoessemcomplicacoes.com.br/agendamentofsc" style="min-width:320px;height:700px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="wrap">
+  <div class="divider">
+    <div class="line"></div>
+    <span>Abaixo, veja mais informações sobre a Pós!</span>
+  </div>
+</div>
+
+<!-- PRACTICE -->
+<div class="wrap">
+  <section id="pratica">
+    <div class="two">
+      <div>
+        <span class="pill">100% Focada na Prática</span>
+        <h2>Do fundamento à execução,<br>com obras reais desde o primeiro módulo</h2>
+        <p class="body-txt">Você aprende dimensionando, projetando e decidindo direto em obra, com casos reais de projetos de pequeno, médio e grande porte.</p>
+        <p class="body-txt">O que rege o programa da pós-graduação: professores que trabalham, que são projetistas, que dimensionam e decidem fundações todos os dias.</p>
+        <a class="btn" href="#agendamento">Quero Aprender</a>
+      </div>
+      <div class="video">
+        <video controls preload="metadata" playsinline poster="poster.jpg">
+          <source src="assets/aula-pratica.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo HTML5.
+        </video>
+        <button class="play" type="button" aria-label="Reproduzir vídeo"></button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- COORDINATOR / BIO -->
+<section class="blueband bio" id="coordenador">
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <span class="pill-dark">Conheça o fundador do Instituto FSC</span>
+        <h2>Dr. Vinícius Lorenzi</h2>
+        <div class="role">Engenheiro Civil · Doutor em Fundações</div>
+        <p class="body-txt">Engenheiro Civil há mais de 15 anos, formado pela UNIOESTE, Pós-graduação pela FGV, Mestrado pela COPPE/UFRJ e Doutorado pela PUC-PR.</p>
+        <p class="body-txt">Sócio-proprietário da empresa Fungeo Fundações e Geologia, Sollium Geotecnia e do FSC Instituto de Engenharia e Pós-graduação. Autor dos livros <i>Fundações na Prática</i> e <i>Cortina de Contenção e Tirantes na Prática</i>.</p>
+      </div>
+      <div class="portrait"><img src="assets/vinicius-web.jpg" alt="Dr. Vinícius Lorenzi"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENTORS -->
+<div class="wrap">
+  <section class="mentors">
+    <div class="sec-head center">
+      <span class="pill">Corpo Docente</span>
+      <h2>Conheça seus mentores</h2>
+    </div>
+    <div class="mentors-carousel">
+      <div class="mentors-track">
+      <div class="mentor"><div class="av"><img src="assets/vinicius-web.jpg" alt="Vinícius Lorenzi"></div><div class="nm">Vinícius Lorenzi</div><div class="mrole">Doutor em Fundações</div></div>
+      <div class="mentor"><div class="av"><img src="assets/mentores/sandro-valerio.jpg" alt="Sandro Valério"></div><div class="nm">Sandro Valério</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor"><div class="av"><img src="assets/mentores/fabricio-gonzalez.jpg" alt="Fabrício Gonzalez"></div><div class="nm">Fabrício Gonzalez</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor"><div class="av"><img src="assets/mentores/jaqueline-bogorni.jpg" alt="Jaqueline Bogorni"></div><div class="nm">Jaqueline Bogorni</div><div class="mrole">Engenheira Civil</div></div>
+      <div class="mentor"><div class="av"><img src="assets/mentores/thays-car.jpg" alt="Thays Car Feliciano"></div><div class="nm">Thays Car Feliciano</div><div class="mrole">Eng. Geotécnica</div></div>
+      <div class="mentor"><div class="av"><img src="assets/mentores/luiz-fernando.jpg" alt="Luiz Fernando"></div><div class="nm">Luiz Fernando</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor"><div class="av"><img src="assets/mentores/juliane-marques.jpg" alt="Juliane Marques"></div><div class="nm">Juliane Marques</div><div class="mrole">Engenheira Civil</div></div>
+      <div class="mentor"><div class="av"><img src="assets/mentores/nivaldo.jpg" alt="Nivaldo de Maria"></div><div class="nm">Nivaldo de Maria</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor"><div class="av"><img src="assets/mentores/rangel-lage.jpg" alt="Rangel Lage"></div><div class="nm">Rangel Lage</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor"><div class="av"><img src="assets/mentores/renan-tori.jpg" alt="Renan Tori"></div><div class="nm">Renan Tori</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor"><div class="av"><img src="assets/mentores/rodrigo-toffolo.jpg" alt="Rodrigo Toffolo"></div><div class="nm">Rodrigo Toffolo</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/vinicius-web.jpg" alt="Vinícius Lorenzi"></div><div class="nm">Vinícius Lorenzi</div><div class="mrole">Doutor em Fundações</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/mentores/sandro-valerio.jpg" alt="Sandro Valério"></div><div class="nm">Sandro Valério</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/mentores/fabricio-gonzalez.jpg" alt="Fabrício Gonzalez"></div><div class="nm">Fabrício Gonzalez</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/mentores/jaqueline-bogorni.jpg" alt="Jaqueline Bogorni"></div><div class="nm">Jaqueline Bogorni</div><div class="mrole">Engenheira Civil</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/mentores/thays-car.jpg" alt="Thays Car Feliciano"></div><div class="nm">Thays Car Feliciano</div><div class="mrole">Eng. Geotécnica</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/mentores/luiz-fernando.jpg" alt="Luiz Fernando"></div><div class="nm">Luiz Fernando</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/mentores/juliane-marques.jpg" alt="Juliane Marques"></div><div class="nm">Juliane Marques</div><div class="mrole">Engenheira Civil</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/mentores/nivaldo.jpg" alt="Nivaldo de Maria"></div><div class="nm">Nivaldo de Maria</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/mentores/rangel-lage.jpg" alt="Rangel Lage"></div><div class="nm">Rangel Lage</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/mentores/renan-tori.jpg" alt="Renan Tori"></div><div class="nm">Renan Tori</div><div class="mrole">Engenheiro Civil</div></div>
+      <div class="mentor" aria-hidden="true"><div class="av"><img src="assets/mentores/rodrigo-toffolo.jpg" alt="Rodrigo Toffolo"></div><div class="nm">Rodrigo Toffolo</div><div class="mrole">Engenheiro Civil</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- MATERIALS -->
+<div class="wrap">
+  <section>
+    <div class="two">
+      <div>
+        <span class="pill">Materiais Exclusivos</span>
+        <h2>Acesso a materiais, PDFs e planilhas exclusivas da pós</h2>
+        <p class="body-txt">Ao longo da pós-graduação, você tem acesso a materiais desenvolvidos especialmente para aplicação em campo: planilhas de dimensionamento e PDFs de referência técnica.</p>
+        <p class="body-txt">Conteúdo que não para: mês a mês, nenhum livro, conteúdo por quem projeta fundações todos os dias.</p>
+        <a class="btn" href="#agendamento">Quero ter acesso aos materiais</a>
+      </div>
+      <div class="mat-mosaic">
+        <figure class="m-wide"><img src="assets/mat-projeto.jpg" alt="Projeto de fundação — material da pós"></figure>
+        <figure><img src="assets/mat-mindmap.jpg" alt="Mapa mental: análise de sondagens para escolha de fundação"></figure>
+        <figure class="m-tall"><img src="assets/mat-tubuloes.jpg" alt="Planilha de cálculo de tubulões"></figure>
+        <figure><img src="assets/mat-relatorio.jpg" alt="Relatório de capacidade de carga"></figure>
+        <figure class="m-wide"><img src="assets/mat-planilha.jpg" alt="Planilha de dados de fundações"></figure>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- METHODOLOGY -->
+<div class="wrap">
+  <section class="method" id="metodologia">
+    <div class="sec-head">
+      <span class="pill">Metodologia</span>
+      <h2>Conheça a metodologia que já ajudou<br>vários de nossos alunos</h2>
+      <p class="body-txt">Em nosso modelo de ensino, diversas frentes que facilitam resultados reais em projetos.</p>
+    </div>
+    <div class="two" style="margin-top:18px">
+      <div class="mdiagram">
+        <div class="orbit">
+          <div class="spoke" style="--a:-90deg"><div class="arm"><div class="mbubble accent">Aulas ao vivo</div></div></div>
+          <div class="spoke" style="--a:-45deg"><div class="arm"><div class="mbubble accent">Certificado reconhecido pelo MEC</div></div></div>
+          <div class="spoke" style="--a:0deg"><div class="arm"><div class="mbubble">Aulas gravadas e editadas</div></div></div>
+          <div class="spoke" style="--a:45deg"><div class="arm"><div class="mbubble">Networking</div></div></div>
+          <div class="spoke" style="--a:90deg"><div class="arm"><div class="mbubble">Encontros recorrentes</div></div></div>
+          <div class="spoke" style="--a:135deg"><div class="arm"><div class="mbubble">Materiais em PDF</div></div></div>
+          <div class="spoke" style="--a:180deg"><div class="arm"><div class="mbubble">Planilhas personalizadas</div></div></div>
+          <div class="spoke" style="--a:-135deg"><div class="arm"><div class="mbubble">Softwares atuais</div></div></div>
+        </div>
+        <div class="cloud"><span>FSC</span></div>
+      </div>
+      <div class="cert-col">
+        <div class="cert-img"><img src="assets/certificado-web.jpg" alt="Certificado da Pós-Graduação em Engenharia de Fundações e Contenções — Faculdade Focus"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- REFERENCE -->
+<div class="wrap">
+  <section class="about">
+    <div class="two">
+      <div>
+        <span class="pill">Saiba tudo sobre o Instituto FSC</span>
+        <h2>A maior referência em formação de engenheiros especialistas em fundações do Brasil</h2>
+        <p class="body-txt">A engenharia de fundações e contenções desempenha um papel fundamental no desenvolvimento de obras em todo o país. Um projeto de fundação bem executado exige equilíbrio entre responsabilidade técnica, normas vigentes e conhecimento de campo, e poucos engenheiros saem da faculdade preparados para isso.</p>
+        <p class="body-txt">É notável que muitos engenheiros concluem sua formação sem a habilidade de projetar, dimensionar ou assinar com confiança um projeto de fundação. A metodologia tradicional das faculdades não favorece o aprendizado prático que o mercado exige.</p>
+        <p class="body-txt">Foi com esse propósito que o Instituto FSC foi criado: formar engenheiros capazes de projetar com confiança, seguindo os passos de uma metodologia testada e aprovada, construída dentro de obra por quem assina e executa fundações todos os dias.</p>
+      </div>
+      <div class="photo-grid"><img src="assets/obra-armadura.jpg" alt="Armadura e escavação de fundação em obra"></div>
+    </div>
+  </section>
+</div>
+
+<!-- FEATURES -->
+<div class="wrap">
+  <section class="features">
+    <div class="feat-grid">
+      <div class="feat">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg>
+        <h4>Professores que<br>Atuam em Campo</h4>
+      </div>
+      <div class="feat">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <h4>24 Meses de<br>Acesso Ilimitado</h4>
+      </div>
+      <div class="feat">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <h4>Compra<br>Segura</h4>
+      </div>
+      <div class="feat">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M4 21V10l8-5 8 5v11M9 21v-6h6v6"/><path d="M3 10h18"/></svg>
+        <h4>Suporte<br>Acadêmico</h4>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-ty">
+  <div class="wrap">
+    <img src="assets/logo-fsc.png" alt="Instituto FSC — Instituto de Engenharia e Pós-Graduação">
+    <p class="legal">Todos os direitos reservados — FSC Treinamentos em Engenharia Civil LTDA · CNPJ 34.229.400/0001-95<br>Reconhecido pelo MEC · Faculdade Focus</p>
+  </div>
+</footer>
+
+
+<script type="text/javascript">
+  var s=document.createElement("script");
+  s.src="https://scripts.converteai.net/396cc1c1-83fa-4a0f-a64b-93c75ef429ec/players/6a14b585e5f223389716dceb/v4/player.js",s.async=!0,document.head.appendChild(s);
+</script>
+<script>
+(function(){
+  var box=document.querySelector('.video');
+  if(!box) return;
+  var v=box.querySelector('video');
+  var btn=box.querySelector('.play');
+  if(!v||!btn) return;
+  btn.addEventListener('click',function(){ v.play(); });
+  v.addEventListener('play',function(){ box.classList.add('is-playing'); });
+  v.addEventListener('pause',function(){ box.classList.remove('is-playing'); });
+  v.addEventListener('ended',function(){ box.classList.remove('is-playing'); });
+})();
+</script>
+
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
